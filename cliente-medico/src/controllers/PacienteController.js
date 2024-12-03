@@ -64,7 +64,8 @@ export const updatePaciente = async (id, paciente) => {
         }
     }
 };
-// Eliminar un paciente
+// controllers/PacienteController.js
+
 export const deletePaciente = async (id) => {
     try {
         if (!id) {
@@ -84,6 +85,7 @@ export const deletePaciente = async (id) => {
         }
     }
 };
+
 
 export const loginUsuario = async (formData) => {
     try {
