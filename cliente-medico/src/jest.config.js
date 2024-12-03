@@ -6,5 +6,7 @@ module.exports = {
       '/node_modules/(?!(axios|axios-mock-adapter)/)',
       '/node_modules/(?!(axios)/)', // Transforma axios y axios-mock-adapter
     ],
+    testEnvironment: 'node',
+  testTimeout: 30000, // Tiempo máximo para cada prueba
   };
   

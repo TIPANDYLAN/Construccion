@@ -3,7 +3,6 @@ const {
     createPaciente,
     updatePaciente,
     deletePaciente,
-    loginUsuario,
     getPacienteByEmail,
     getPacienteById
 } = require('../controllers/PacienteController');

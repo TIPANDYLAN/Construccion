@@ -42,8 +42,12 @@
     "@babel/preset-env": "^7.26.0",
     "axios-mock-adapter": "^2.1.0",
     "babel-jest": "^29.7.0",
+    "chromedriver": "^131.0.1",
+    "cypress": "^13.16.0",
     "jest": "^27.5.1",
     "msw": "^2.6.6",
+    "playwright": "^1.49.0",
+    "selenium-webdriver": "^4.27.0",
     "supertest": "^7.0.0",
     "util": "^0.12.5"
   }
