@@ -48,7 +48,7 @@ router.get('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        await Turno.update(req.body, { where: { pac_id: id } });
+        await Turno.update(req.body, { where: { tur_id: id } });
         res.json({ message: 'Turno actualizado' });
     } catch (error) {
         res.status(500).json({ error: error.message });

@@ -109,3 +109,12 @@ export const getPacienteByEmail = async (email) => {
         throw error;  // Lanza el error si la solicitud falla
     }
 };
+export const getPacienteById = async (id) => {
+    try {
+        const response = await api.get(`/paciente/${id}`);
+        return response.data;  // Devuelve los datos del paciente
+    } catch (error) {
+        console.error('Error al obtener paciente:', error);
+        throw error;  // Lanza el error si la solicitud falla
+    }
+};
