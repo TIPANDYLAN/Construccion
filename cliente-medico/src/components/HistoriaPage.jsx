@@ -28,6 +28,12 @@ const HistoriaPage = () => {
             setPacientes(data); // Guardar pacientes
         };
         fetchPacientes();
+
+        const fetchHistorias = async () => {
+            const data = await getHistorias();
+            setHistorias(data);
+        };
+        fetchHistorias();
     }, []);
 
     const handleSubmit = async (e) => {
@@ -96,7 +102,9 @@ const HistoriaPage = () => {
     };
 
     return (
-        <div>
+        <div className='Historia'>
+            <div className="turno">
+            
             <h1>Historias</h1>
             <form onSubmit={handleSubmit}>
                 {/* Dropdown de turnos */}
@@ -136,13 +144,17 @@ const HistoriaPage = () => {
                 />
                 <button type="submit">{editing ? 'Actualizar' : 'Crear Historia'}</button>
             </form>
-            <ul>
-                {historias.map((his) => (
-                    <li key={his.his_id}>
-                        {his.his_fecha}: {his.his_descripcion}
-                    </li>
-                ))}
-            </ul>
+            </div>
+            <div className="ListaHistorias">
+                <h1>Lista de Historias</h1>
+                <ul>
+                    {historias.map((his) => (
+                        <li key={his.his_id}>
+                            {his.his_fecha}: {his.his_descripcion}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };

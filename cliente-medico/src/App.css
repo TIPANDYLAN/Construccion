@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header{
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 4px solid rgb(77, 117, 77);
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.Header img{
+  height: 70%;
+  margin: 0 20px;
+}
+
+.Header {
+  font-size: 2em;
+  color: rgb(54, 94, 54);
+  font-weight: bold;
+}
+
+.App{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('./assets/Espe_background.jpg');
+  background-size: cover;
+  height: 80vh;
 }
 
-.App-link {
-  color: #61dafb;
+.Main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 50px;
+  margin: 20px;
+  border: 5px solid rgb(77, 117, 77);
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+  text-decoration: none; /* Elimina el subrayado */
+  color: rgb(73, 122, 90); /* Mantiene el color del texto */
+  background-color: #ffffff; /* Ejemplo de fondo */
+  border: 3px solid rgb(77, 117, 77); /* Opcional: Elimina el borde */
+  padding: 10px 20px; /* Ajusta el relleno */
+  border-radius: 5px; /* Hace esquinas redondeadas */
+  cursor: pointer; /* Cambia el cursor a una mano */
+}
+.link{
+  color: inherit; /* Mantiene el color del texto */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button:hover{
+  background-color: rgb(202, 233, 202); /* Cambia el color de fondo */
+}
+
+.Historia{
+  display: flex;
+  flex-direction: row;
+}
+.Formulario, .login, .turno, .ListaHistorias{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 50px;
+  margin: 20px;
+  border: 5px solid rgb(77, 117, 77);
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+form input, form textarea, form button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.Footer{
+  height: 52px;
+  background-color: rgb(56, 90, 56);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Footer .link{
+  color: rgb(162, 255, 162);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.Footer .link:hover{
+  color: rgb(139, 218, 143);
 }

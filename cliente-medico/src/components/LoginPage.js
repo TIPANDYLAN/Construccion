@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginUsuario, getPacienteByEmail } from '../controllers/PacienteController'; // Asume que tienes un controlador de login
+import { loginUsuario } from '../controllers/PacienteController'; // Asume que tienes un controlador de login
 import { createTurno } from '../controllers/TurnoController'; // Asume que tienes un controlador para crear turnos
 
 const LoginPage = () => {
@@ -17,7 +17,6 @@ const LoginPage = () => {
 
         try {
             const user = await loginUsuario(formData); // Llama a la función de login
-            const id = await getPacienteByEmail(formData.email); // Llama a la función para obtener el paciente por email
             if (user) {
                 // Si el login es exitoso, creamos un turno
                 const turnoData = {
@@ -38,7 +37,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
+        <div className='login'>
             <h1>Iniciar sesión</h1>
             <form onSubmit={handleSubmit}>
                 <input

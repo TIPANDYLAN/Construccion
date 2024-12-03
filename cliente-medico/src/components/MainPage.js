@@ -4,10 +4,10 @@ import {  Link } from 'react-router-dom';
 
 const MainPage = () => {
     return (
-        <div>
+        <div className='Main'>
             <h1>¿Quieres sacar turno?</h1>
             <button>
-                <Link to="/registro">Ir a pacientes</Link>
+                <Link to="/registro" className='link'>Registrarse</Link>
             </button>
         </div>
     );
