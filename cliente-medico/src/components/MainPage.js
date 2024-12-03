@@ -7,7 +7,7 @@ const MainPage = () => {
         <div>
             <h1>¿Quieres sacar turno?</h1>
             <button>
-                <Link to="/pacientes">Ir a pacientes</Link>
+                <Link to="/registro">Ir a pacientes</Link>
             </button>
         </div>
     );

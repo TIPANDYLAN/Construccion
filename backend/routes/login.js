@@ -1,4 +1,3 @@
-// routes/pacientes.js
 const express = require('express');
 const Paciente = require('../models/Paciente');
 const router = express.Router();
@@ -8,13 +7,17 @@ router.post('/', async (req, res) => {
     const { email, pac_nacimiento } = req.body;
 
     try {
+        // Validar si los campos email y pac_nacimiento están presentes
+        if (!email || !pac_nacimiento) {
+            return res.status(400).json({ error: 'Faltan campos requeridos' });
+        }
+
         // Buscar paciente por correo
         const paciente = await Paciente.findOne({
             where: {
-                pac_email: email // Asegúrate de que el correo esté dentro de "where"
+                pac_email: email // Buscar por correo
             }
         });
-        
 
         if (!paciente) {
             return res.status(400).json({ error: 'Correo no encontrado' });
@@ -25,13 +28,11 @@ router.post('/', async (req, res) => {
             return res.status(400).json({ error: 'Fecha de nacimiento incorrecta' });
         }
 
-        // Si el login es exitoso, generar un token JWT
-        const token = jwt.sign({ pacienteId: paciente._id }, 'secret_key', { expiresIn: '1h' });
-
-        // Enviar respuesta con el token
-        res.json({ token, paciente });
+        // Si las credenciales son correctas, enviar los datos del paciente
+        res.json({ mensaje: 'Autenticación exitosa', paciente });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error(error); // Imprimir error en el servidor
+        res.status(500).json({ error: 'Error en el servidor' });
     }
 });
 

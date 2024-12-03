@@ -100,3 +100,12 @@ export const loginUsuario = async (formData) => {
         }
     }
 };
+export const getPacienteByEmail = async (email) => {
+    try {
+        const response = await api.get(`/paciente/${email}`);
+        return response.data;  // Devuelve los datos del paciente
+    } catch (error) {
+        console.error('Error al obtener paciente:', error);
+        throw error;  // Lanza el error si la solicitud falla
+    }
+};

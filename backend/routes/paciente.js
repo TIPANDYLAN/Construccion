@@ -34,6 +34,23 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+
+// Obtener paciente por email (nuevo controlador)
+router.get('/:email', async (req, res) => {
+    try {
+        const { email } = req.params;  // Obtener el email desde los parámetros de la URL
+        const paciente = await Paciente.findOne({ where: { pac_email: email } });  // Buscar el paciente por email
+
+        if (paciente) {
+            res.json(paciente);  // Si el paciente es encontrado, devolverlo
+        } else {
+            res.status(404).json({ error: 'Paciente no encontrado' });  // Si no se encuentra el paciente
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });  // Manejo de errores
+    }
+});
+
 // Eliminar paciente
 router.delete('/:id', async (req, res) => {
     try {
