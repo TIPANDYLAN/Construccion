@@ -38,7 +38,7 @@ const LoginPage = () => {
 
     return (
         <div className='login'>
-            <h1>Iniciar sesión</h1>
+            <h1>Solicitud de Turno</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="email"
@@ -64,9 +64,12 @@ const LoginPage = () => {
                     placeholder="Motivo de consulta"
                     required
                 />
-                <button type="submit">Iniciar sesión</button>
+                <button type="submit">Envia el Turno</button>
             </form>
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            <label>¿No estas registrado? Regístrese en &nbsp;
+                        <a href="/registro">Registrarse</a>
+                    </label>
         </div>
     );
 };
